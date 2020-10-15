@@ -38,7 +38,7 @@ defined(__ARM_ARCH_7R__) || defined(__ARM_ARCH_7M__)) )
 #if !defined(PEDANTIC) && !defined(OPENSSL_NO_ASM) && !defined(OPENSSL_NO_INLINE_ASM)
 #if defined(__GNUC__) && __GNUC__>=2
 # if defined(__x86_64) || defined(__x86_64__)
-#  define BSWAP8(x) ({  u64 ret=(x);            \
+# define BSWAP8(x) ({  u64 ret=(x);            \
     asm ("bswapq %0"        \
     : "+r"(ret));   ret;        })
 # define BSWAP4(x) ({  u32 ret=(x);            \
